@@ -46,36 +46,33 @@ class ProjectsTest(TestCase):
         Projects.objects.all().delete()
 
 
-class RatingTestClass(TestCase):
+class UserProfileTestClass(TestCase):
+    #setup method
     def setUp(self):
-        self.user = User(id=1,username='Mwangi')
-        self.user.save()
-        self.user_profile = UserProfile(user=self.user,image="pic.png",bio=" bio")
-        self.new_project = Projects(id=1,name="project",image="",description=" project1",user=self.user_profile )
-        self.new_project.save()
-        self.project_rating = Rating(id=1,design=7,usability=8,content=9,user=self.user_profile,project=self.new_project)
+        self.user_name = User(username='mwangi')
+        self.user_name.save()
+        self.user_profile = UserProfile(user=self.user_name,image="",bio="bio")
    
     def tearDown(self):
         User.objects.all().delete()
         UserProfile.objects.all().delete()
-        Projects.objects.all().delete()
-        
+      
     def test_instance(self):
-        self.assertTrue(isinstance(self.project_rating,Rating))
-    
-    def test_save_rating(self):
-        self.project_rating.save_rating()
-        ratings=Rating.objects.all()
-        self.assertTrue(len(ratings)>0)
+        self.assertTrue(isinstance(self.user_profile,UserProfile))
+            
+    def test_save(self):
+        self.user_name.save_profile()
+        profiles=UserProfile.objects.all()
+        self.assertTrue(len(profiles)>0)
         
-    def test_delete_rating(self):
-        self.project_rating.save_rating()
-        self.project_rating.delete_rating()
-        ratings=Rating.objects.all()
-        self.assertTrue(len(ratings)==0)
+    def test_delete(self):
+        self.user_name.save_profile()
+        self.user_name.delete_profile()
+        profiless=UserProfile.objects.all()
+        self.assertTrue(len(profiless)==0)
         
-    # def test_get_project_rating(self):
-    #     id=1
-    #     self.project_rating.get_project_rating(id)
-    #     self.assertEquals(self.project_rating.id,1)
-        
+    def test_filter_profile_by_id(self):
+        id=1
+        self.user_profile.filter_profile_by_id(id)
+        self.assertEquals(self.user_profile.user.username,'Mugera')
+

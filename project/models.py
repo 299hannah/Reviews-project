@@ -48,6 +48,13 @@ class UserProfile(models.Model):
     def save_user_profile(sender, instance, created, **kwargs):
         instance.userprofile.save()
 
+    def save_profile(self):
+        self.save()
+
+    def delete_profile(self):
+        self.delete()
+    
+
 
 class Projects(models.Model):
 
