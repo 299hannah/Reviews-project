@@ -1,0 +1,22 @@
+.box{
+    background-image: url("https://images.unsplash.com/photo-1566312922674-e02730f7b912?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80");
+    padding: 200px 200px;
+    margin-top: 20px;
+    margin-right: 1px;
+    margin-left: 1px;
+
+    /* margin: 100px; */
+    background-repeat: no-repeat;
+    background: cover;
+    background-size: 100%;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 50px;
+
+    
+
+}
+.project{
+
+
+}
