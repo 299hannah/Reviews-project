@@ -15,11 +15,22 @@
             
                 
             <div>
-                <a href="{%url 'contacts'%}"class="navbar-brand">Contacts</a>
+                <a href="{%url 'django_registration_register'%}"class="navbar-brand">Join Us</a>
+                </div> 
+ 
+                <div>
+                    <a href="{%url 'login'%}"class="navbar-brand">Login</a>
+                </div>
+                <div>
+                    <a href="{%url 'profile'%}"class="navbar-brand">Profile</a>
+                </div>  
+               
+                <div>
+                    <a href="{%url 'submit-project'%}"class="navbar-brand">Submit Project</a>
                 </div> 
                 <div>
-                    <a href="{%url 'contacts'%}"class="navbar-brand">Contacts</a>
-                    </div>   
+                    <a href="{%url 'logout'%}"class="navbar-brand">exit</a>
+                </div>
             </div> 
             <!-- Adding a search form -->
             <div class="col-sm-4 col-md-4 navbar-right">
@@ -32,9 +43,12 @@
 
                     </div>
                 </form>
+                
             </div>
             <!-- search form end -->
+           
         </div>
+       
     </nav>
     </div>
 </body>
