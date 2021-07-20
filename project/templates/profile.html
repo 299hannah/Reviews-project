@@ -1,19 +1,23 @@
-{%extends 'base.html'%}
 
 {%load bootstrap3%}
 {%block content%}
-{{block.super}}
 
-{{user.user}}
+
+{{ user.user_name }}
 <br>
 {{user.bio}}
 <br>
 {{user.user.email}}
+<br>
+<img src="{{user.image.url}}" style="width: 200px; height: 200px;" alt="">
+
+<br>
 <div class="form-group m-3 text-center">
     <h4 class="">Update</h4>
     <form method="post" action="/accounts/profile/" class="form">
         {% csrf_token %} {%bootstrap_form form%}
         <div class="form-group">
+            
             <input type="submit" class="btn btn-primary btn-sm" value="update">
         </div>
 
