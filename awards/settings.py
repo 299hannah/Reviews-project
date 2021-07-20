@@ -13,6 +13,19 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+ 
+from decouple import config,Csv
+
+
+cloudinary.config( 
+  cloud_name = "imagesfordjango", 
+  api_key = "913754811952675", 
+  api_secret = "2g7l8hoz9ezx6rrxpNBnAxJLwEs" 
+)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -39,6 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'project',
+    'cloudinary',
     'bootstrap3',
   
 
@@ -59,7 +73,7 @@ ROOT_URLCONF = 'awards.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,"templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -67,6 +81,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
+
             ],
         },
     },
@@ -78,11 +94,6 @@ WSGI_APPLICATION = 'awards.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-     
-    }
-}
 
 
 # Password validation
