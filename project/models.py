@@ -62,22 +62,17 @@ class Projects(models.Model):
     class Meta:
         ordering = ["pk"]
 
-    # def save_project(self):
-    #     self.save()
+    def save_project(self):
+        self.save()
 
-    # def delete_project(self):
-    #     self.delete()
+    def delete_project(self):
+        self.delete()
     
     @classmethod
     def get_project_by_id(cls,id):
         project = Projects.objects.filter(id=id)
         return project
-    
-    # @classmethod
-    # def search_project_by_search_term(cls,search_term):
-    #     return cls.objects.filter(name__icontains=search_term).all()
-
-  
+ 
 
     def __str__(self):
         return self.description
@@ -133,3 +128,4 @@ class Rating(models.Model):
 
     def __str__(self):
         return f'{self.project} Rating'
+
