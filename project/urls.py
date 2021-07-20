@@ -6,7 +6,15 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("accounts/profile/", views.profile_view, name="profile")
+
+    path("projects/<int:id>", views.projects, name="projects"),
+
+
+    path("contacts/", views.contact, name="contacts"),
+    path('search/', views.search_results, name='search_results'),
+    path("accounts/profile/", views.profile_view, name="profile"),
+
+
 ]
 # if settings.DEBUG:
 #     urlpatterns+=static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) 
