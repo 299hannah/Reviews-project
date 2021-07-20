@@ -20,7 +20,7 @@
 
             <img style="max-width: 100%; max-height: 100%;" src="{{project.image.url}}" alt=""></a>
 
-          <p class="desc">View</p>
+          <!-- <p class="desc">View</p> -->
 
         </div>
       </div>
@@ -102,6 +102,7 @@
           </div>
         </div>
         <br>
+        
 
         {% endif %}
 
@@ -111,10 +112,9 @@
 
 
       </div>
-    </div>
     
-  </div>
-  
+
+  <div class="col-md-6">
         <div class="form">
           <p class="text-center h3">Rate Project</p>
           <form action="{%url 'projects' project.id %}" method="post" enctype="multipart/form-data">
@@ -122,7 +122,8 @@
             <input type="submit" class="btn btn-primary" value="Vote" />
           </form>
         </div>
-    
+    </div>
 </div>
-
+</div>
+</div>
 {%endblock%}

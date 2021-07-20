@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django_registration.backends.one_step.views import RegistrationView
 from django.contrib.auth.models import User
 from .forms import  RateForm, SubmitProjectForm, UserProfileForm
+from django.contrib.auth.decorators import login_required
+
 from django.contrib import messages
 from .models import Projects, Rating, UserProfile, Category
 # Create your views here.
@@ -28,7 +30,7 @@ def index(request):
 #     project = Projects.objects.get(id=pk)
     
 #     return render(request, "projects.html",{'project':project})
-
+@login_required(login_url='/accounts/login/')
 def projects(request,id):
     user = UserProfile.objects.get(user= request.user)
     project = Projects.objects.get(id=id)
@@ -95,8 +97,7 @@ def projects(request,id):
     return render(request,"projects.html",ctx)
 
 
-def contact(request):
-	return render(request, "contact.html")
+@login_required(login_url='/accounts/login/')
 
 def user_profile(request,username):
     current_user = request.user
@@ -113,6 +114,7 @@ def user_profile(request,username):
     }
     return render (request,'profile.html',ctx)
 
+@login_required(login_url='/accounts/login/')
 
 def profile_view(request):
     user_logged=request.user
@@ -136,6 +138,7 @@ def profile_view(request):
     }
     return render(request, 'profile.html', ctx)
 
+@login_required(login_url='/accounts/login/')
 
 def search_results(request):
     if 'project' in request.GET and request.GET["project"]:
@@ -153,6 +156,7 @@ def logout(request):
     logout(request)
     return redirect('login')
 
+@login_required(login_url='/accounts/login/')
 
 def submit_project(request):
     current_user = request.user

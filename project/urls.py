@@ -1,6 +1,6 @@
 from django.urls import path
-# from django.conf import settings
-# from django.conf.urls.static import static
+from django.conf import settings
+from django.conf.urls.static import static
 from . import views
 
 
@@ -13,11 +13,10 @@ urlpatterns = [
 
 
 
-    path("contacts/", views.contact, name="contacts"),
     path('search/', views.search_results, name='search_results'),
     path("accounts/profile/", views.profile_view, name="profile"),
 
 
 ]
-# if settings.DEBUG:
-#     urlpatterns+=static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) 
+if settings.DEBUG:
+    urlpatterns+=static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) 

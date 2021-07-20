@@ -8,11 +8,18 @@
 
 </head>
 <body>
-    <nav class ="navbar navbar-light" style="background-color: #cce2f1;padding-bottom: 0; ">
+    <nav class ="navbar navbar-light" style=" background-color: #21313b;padding-bottom: 0; ">
         <div class="container-fluid">
-            <div class=" col-sm-4 col-md-4 navbar-header">
-                <a href="{%url 'index'%}" class="navbar-brand">Awards</a>
-            
+            <div class=" col-sm-4 col-md-4 navbar-header HE"style=" color:aliceblue;">
+                <a href="{%url 'index'%}" class="navbar-brand">Awwards</a>
+          
+                <div>
+                    <a href="{%url 'profile'%}"class="navbar-brand">Profile</a>
+                </div>  
+               
+                <div>
+                    <a href="{%url 'submit-project'%}"class="navbar-brand">Submit Project</a>
+                </div> 
                 
             <div>
                 <a href="{%url 'django_registration_register'%}"class="navbar-brand">Join Us</a>
@@ -21,15 +28,9 @@
                 <div>
                     <a href="{%url 'login'%}"class="navbar-brand">Login</a>
                 </div>
-                <div>
-                    <a href="{%url 'profile'%}"class="navbar-brand">Profile</a>
-                </div>  
                
                 <div>
-                    <a href="{%url 'submit-project'%}"class="navbar-brand">Submit Project</a>
-                </div> 
-                <div>
-                    <a href="{%url 'logout'%}"class="navbar-brand">exit</a>
+                    <a href="{%url 'logout'%}"class="navbar-brand">Logout</a>
                 </div>
             </div> 
             <!-- Adding a search form -->
