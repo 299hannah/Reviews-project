@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from django_registration.backends.one_step.views import RegistrationView
 from django.contrib.auth.models import User
-from .forms import  RateForm, UserProfileForm
+from .forms import  RateForm, SubmitProjectForm, UserProfileForm
 from django.contrib import messages
 from .models import Projects, Rating, UserProfile, Category
 # Create your views here.
+
+
 
 def index(request):
     technology = request.GET.get('technology')
@@ -152,3 +154,21 @@ def logout(request):
     return redirect('login')
 
 
+def submit_project(request):
+    current_user = request.user
+    user = UserProfile.objects.get(user=current_user)
+    form = SubmitProjectForm()
+    if request.method == 'POST':
+        form = SubmitProjectForm(request.POST,request.FILES)
+        if form.is_valid():
+            project = form.save(commit=False)
+            project.user = user
+            project.save()
+            return redirect('/')
+    else:
+        form = SubmitProjectForm()
+    ctx = {
+        'form':form
+    }
+    
+    return render(request,"submit-project.html",ctx)
