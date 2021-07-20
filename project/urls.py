@@ -8,6 +8,9 @@ urlpatterns = [
     path("", views.index, name="index"),
 
     path("projects/<int:id>", views.projects, name="projects"),
+    path('submit-project/', views.submit_project,name="submit-project"),
+
+
 
 
     path("contacts/", views.contact, name="contacts"),
