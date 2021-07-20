@@ -1,9 +1,129 @@
-hi
 {%extends 'base.html'%}
 
+{%include 'background.html'%}
 {%load static%}
 {%load bootstrap3%}
+<!-- <!DOCTYPE html>
+<html >
+<head>
+  <style type="text/css">
+    .frame {
+      height: 200px;
+      width: 200px;
+      overflow: hidden;
+    }
+    .zoomin img {
+      height: 200px;
+      width: 200px;
+      -webkit-transition: all 1s ease;
+      -moz-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+      transition: all 1s ease;
+    }
+    .zoomin img:hover {
+      width: 220px;
+      height: 220px;
+    }
+  </style>
+</head>
+<body>
+  <div class="zoomin frame">
+    <img src="http://www.corelangs.com/css/box/img/zimage.png" >
+  </div>
+</body>
+</html>000 -->
+<!-- <div class="container m-5">
+
+
+          <div class="card" style="width: 18rem;">
+              <div class="card-header">
+                Categories
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                <a href="{% url 'index' %}">All</a>
+                </li>
+
+                {%for category in categories%}
+                <li class="list-group-item">
+                  <a href="{% url 'index' %}?category={{category.name}}">{{category.name}}</a>
+                  </li>
+
+                {%endfor%}
+              </ul>
+         
+      <div class="col-md-9">
+          <div class="row">
+
+
+{% for project in profiles %}
+               <div class="col-md-4 ">
+                <div class="card my-2">
+                    <a href="{%url 'project' project.id%}"><img class="image1" src="{{project.image.url}}" alt="Card image cap"></a>
+                    <div class="card-body">
+                      <hr>
+                      <small>Category: {{project.category.name}}</small>
+
+                      
+                    </div>
+                    <a href="{%url 'project' project.id%}" class="btn btn-outline-dark btn-sm m-1"> View</a>
+                  <hr>
+                  </div>
+               </div>
+              {%empty%}
+              <h3>No projects...</h3>
+
+              {%endfor%}
+
+ -->
+
+
 {%block content%}
 
+  <div class="box">
+
+   <h1>Awards</h1> 
+
+  </div>
+  <!-- <div class="card" style="width: 18rem;">
+    <div class="card-header">
+      Categories
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+      <a href="{% url 'index' %}">All</a>
+      </li>
+
+      {%for technologyy in technologies%}
+      <li class="list-group-item">
+        <a href="{% url 'index' %}?category={{category.name}}">{{category.name}}</a>
+        </li>
+        {%endfor%}
+      </ul>
+  -->
+<div class="col-md-9">
+  <div class="row">
+
+
+{% for project in projects %}
+       <div class="col-md-4 container">
+        <div class="card my-2">
+          <div class="img">
+            <a href="{%url 'projects' project.id%}"><img class="image1" src="{{project.image.url}}"  style="width: 200px; height: 200px;"alt="Card image cap"></a>
+            </div>
+            <div class="card-body">
+              <hr>
+              <small>Category: {{project.category.name}}</small>
+
+              
+            </div>
+            <a href="{%url 'projects' project.id%}" class="btn btn-outline-dark btn-sm m-1"> View</a>
+          <hr>
+          </div>
+       </div>
+      {%empty%}
+      <h3>No projects...</h3>
+
+      {%endfor%}
 
 {%endblock%}
