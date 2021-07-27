@@ -1,5 +1,4 @@
 {%extends 'base.html'%}
-{%include 'background.html'%}
 
 {%load static%}
 {%load bootstrap3%}
@@ -30,12 +29,27 @@
               {%endfor%}
 
 
-
-
 {%block content%}
 <div class="box">
+  <!-- <div class="middle">
+
+  <div class="circle" id="circle-a">
+    <strong></strong>
+    <p class="rating">DESIGN</p>
+  </div>
+  <div class="circle" id="circle-b">
+    <strong></strong>
+    <p class="rating">USABILITY</p>
+  </div>
+  <div class="circle" id="circle-c">
+    <strong></strong>
+    <p class="rating">CREATIVITY</p>
+  </div>
+  <div class="circle" id="circle-d">
+ -->
 
 </div>
+
 
   <div class="container">
 <div class="col-md-12">
@@ -79,3 +93,36 @@
 
 
 {%endblock%}
+<!-- 
+{%block scripts%}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.1.3/circle-progress.min.js"></script>
+<script>
+
+var progressBarOptions = {
+	startAngle: -1.55,
+	size: 100,
+    value: {{project.design}},
+    fill: {
+		color: 'Chocolate'
+	}
+}
+
+$('.circle').circleProgress(progressBarOptions).on('circle-animation-progress', function(event, progress, stepValue) {
+	$(this).find('strong').text(String((stepValue/10).toFixed(2)));
+});
+
+$('#circle-b').circleProgress({
+	value :  {{project.usability}},
+	fill: {
+		color: 'Khaki'
+	}
+});
+
+$('#circle-c').circleProgress({
+	value :{{project.creativity}},
+	fill: {
+		color: 
+</script>
+{%endblock%} -->

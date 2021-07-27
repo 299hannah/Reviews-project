@@ -64,10 +64,10 @@ Start the server to run locally.
 ## API Endpoints
 This site has 2 endpoints; 
     
-- **Profiles:** [https://wwwrate.herokuapp.com/api/profiles/](https://wwwrate.herokuapp.com/api/profiles/)
+- **Profiles:** []()
 
     - Query the profiles stored in the database.
-- **Projects:** [https://wwwrate.herokuapp.com/api/projects/](https://wwwrate.herokuapp.com/api/projects/)
+- **Projects:** []()
 
     -  Query data about the projects stored in the database.
 
